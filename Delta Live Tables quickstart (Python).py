@@ -9,7 +9,7 @@
 
 # COMMAND ----------
 
-# MAGIC %fs ls /databricks-datasets/amazon/users
+# MAGIC %fs ls /databricks-datasets/
 
 # COMMAND ----------
 
@@ -62,6 +62,10 @@ line_items_df = (sales_stream_df
 
 line_items_df = line_items_df.withColumn('product_id', F.col('line_item').getItem(1)).withColumn('quantity', F.col('line_item').getItem(4)).drop("line_item").orderBy('customer_id')
 display(line_items_df)
+
+# COMMAND ----------
+
+
 
 # COMMAND ----------
 
