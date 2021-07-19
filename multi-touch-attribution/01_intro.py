@@ -233,7 +233,14 @@ def data_gen(data_gen_path):
 
 # COMMAND ----------
 
-# MAGIC %sh mkdir /dbfs/home/christos.erotocritou@databricks.com/multi-touch-attribution/raw
+# MAGIC %sh
+# MAGIC # Ivo: replaced by next cmd
+# MAGIC # mkdir /dbfs/home/christos.erotocritou@databricks.com/multi-touch-attribution/raw
+
+# COMMAND ----------
+
+import os
+dbutils.fs.mkdirs(os.path.dirname(data_gen_path)[5:]) # strip off /dbfs prefix
 
 # COMMAND ----------
 

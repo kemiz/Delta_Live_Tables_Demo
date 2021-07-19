@@ -50,7 +50,7 @@ import pyspark.sql.functions as F
   comment="The raw customers dataset, ingested from /databricks-datasets.",
   name="Sales_Filtered"
 )
-@dlt.expect("order quantity", "quantity > 2")
+@dlt.expect("order quantity", "quantity > 0")
 def sales_raw():
   sales_stream_df = dlt.read("Sales")
   line_items_df = (sales_stream_df
